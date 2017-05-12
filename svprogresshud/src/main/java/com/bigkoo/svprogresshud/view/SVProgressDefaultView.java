@@ -24,6 +24,7 @@ public class SVProgressDefaultView extends LinearLayout {
     private ImageView ivBigLoading, ivSmallLoading;
     private SVCircleProgressBar circleProgressBar;
     private TextView tvMsg;
+    private TextView tvMsgCenter;
 
     private RotateAnimation mRotateAnimation;
 
@@ -39,6 +40,8 @@ public class SVProgressDefaultView extends LinearLayout {
         ivSmallLoading = (ImageView) findViewById(R.id.ivSmallLoading);
         circleProgressBar = (SVCircleProgressBar) findViewById(R.id.circleProgressBar);
         tvMsg = (TextView) findViewById(R.id.tvMsg);
+        tvMsg.setTextColor(0xff888888);
+        tvMsgCenter = (TextView)findViewById(R.id.tvCenterMsg);
     }
 
     private void init() {
@@ -90,9 +93,15 @@ public class SVProgressDefaultView extends LinearLayout {
         return circleProgressBar;
     }
 
-    public void setText(String string){
+    public void  setText(String string){
         tvMsg.setText(string);
     }
+
+    public void setCenterText(String text){
+        tvMsgCenter.setText(text);
+    }
+
+    public void setTextColor(int color) {tvMsg.setTextColor(color);}
 
     public void showProgress(String string) {
         clearAnimations();

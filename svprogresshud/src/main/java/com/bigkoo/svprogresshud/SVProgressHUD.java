@@ -50,6 +50,7 @@ public class SVProgressHUD {
     private Animation outAnim;
     private Animation inAnim;
     private int gravity = Gravity.CENTER;
+    private int progressWidth  = 400;
     private OnDismissListener onDismissListener;
 
     
@@ -88,6 +89,14 @@ public class SVProgressHUD {
             outAnim = getOutAnimation();
     }
 
+
+    public void setTextColor(int color){
+        mSharedView.setTextColor(color);
+    }
+
+    public void setCenterText(String text){
+        mSharedView.setCenterText(text);
+    }
     /**
      * show的时候调用
      */
@@ -109,6 +118,7 @@ public class SVProgressHUD {
         mSharedView.startAnimation(inAnim);
 
     }
+
 
     public void show() {
         if(isShowing())return;
@@ -199,6 +209,7 @@ public class SVProgressHUD {
     }
     public void setText(String string){
         mSharedView.setText(string);
+
     }
 
     private void setMaskType(SVProgressHUDMaskType maskType) {

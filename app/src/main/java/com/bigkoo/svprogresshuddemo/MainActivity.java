@@ -27,6 +27,9 @@ public class MainActivity extends Activity {
             }
         });
 
+        mSVProgressHUD.setText("合成中...");
+        ///mSVProgressHUD.
+
     }
 
     public void show(View view){
@@ -61,8 +64,7 @@ public class MainActivity extends Activity {
             progress = progress + 5;
             if (mSVProgressHUD.getProgressBar().getMax() != mSVProgressHUD.getProgressBar().getProgress()) {
                 mSVProgressHUD.getProgressBar().setProgress(progress);
-                mSVProgressHUD.setText("进度 "+progress+"%");
-
+                mSVProgressHUD.setCenterText(progress+"%");
                 mHandler.sendEmptyMessageDelayed(0,500);
             }
             else{
@@ -74,7 +76,7 @@ public class MainActivity extends Activity {
     public void showWithProgress(View view){
         progress = 0;
         mSVProgressHUD.getProgressBar().setProgress(progress);//先重设了进度再显示，避免下次再show会先显示上一次的进度位置所以要先将进度归0
-        mSVProgressHUD.showWithProgress("进度 " + progress + "%", SVProgressHUD.SVProgressHUDMaskType.Black);
+        mSVProgressHUD.showWithProgress("合并中", SVProgressHUD.SVProgressHUDMaskType.Black);
         mHandler.sendEmptyMessageDelayed(0,500);
     }
 

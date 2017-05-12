@@ -29,14 +29,30 @@
             android:scaleType="centerInside"
             android:visibility="gone" />
 
-        <com.bigkoo.svprogresshud.view.SVCircleProgressBar
-            android:id="@+id/circleProgressBar"
-            android:layout_width="@dimen/size_image_smallloading"
-            android:layout_height="@dimen/size_image_smallloading"
-            app:svprogress_roundColor="@color/roundColor_svprogresshuddefault"
-            app:svprogress_roundProgressColor="@color/roundProgressColor_svprogresshuddefault"
-            app:svprogress_roundWidth="2dip"
-            android:visibility="gone" />
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.bigkoo.svprogresshud.view.SVCircleProgressBar
+                android:id="@+id/circleProgressBar"
+                android:layout_width="@dimen/size_image_smallloading"
+                android:layout_height="@dimen/size_image_smallloading"
+
+                app:svprogress_roundColor="@color/roundColor_svprogresshuddefault"
+                app:svprogress_roundProgressColor="@color/roundProgressColor_svprogresshuddefault"
+                app:svprogress_roundWidth="4dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/tvCenterMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="45%"
+                android:textSize="20sp"
+                android:textColor="@android:color/white"/>
+
+        </FrameLayout>
+
 
         <TextView
             android:id="@+id/tvMsg"
